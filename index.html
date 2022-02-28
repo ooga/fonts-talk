@@ -1,40 +1,171 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="comet/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>𝔸𝕛𝕠𝕦𝕥𝕖𝕫 du caractère à 𝕧𝕠𝕥𝕣𝕖 site 🚀</h1>
+			</section>
+			<section>
+				<h2>Johan Rouve x Comet</h2>
+				<div>@JohanRouve</div>
+				<div>#JohanRouve</div>
+				<aside class="notes">
+					Complexe de trouver le bonne police pour ce talk
+				</aside>
+			</section>
+			<section>
+				<h2>C'est quoi une police de caractères ?</h2>
+				<blockquote class="fragment">Ensemble de glyphes ... de même style, corps et graisse</blockquote>
+				<aside class="notes">
+					Aujourd’hui, l'usage hésite entre fonte et police, notamment dans l’informatique.
+				</aside>
+			</section>
+			<section>
+				<h2>C'est quoi un glyphe ?</h2>
+				<blockquote class="fragment">Un petit symbole dessiné qui représente une lettre, une ponctuation ou
+					autre.</blockquote>
+			</section>
+			<section>
+				<style>
+					.file-icon {
+						position: relative;
+						width: 180px;
+					}
+
+					.file-icon svg {
+						fill: var(--r-main-color);
+
+					}
+
+					.file-icon-ext {
+						position: absolute;
+						bottom: 30px;
+						left: 0;
+						right: 0;
+						color: var(--r-background-color);
+						font-variation-settings: "EXPR"100, "SERI"40;
+						font-size: 1.5em;
+					}
+
+					.formats-container {
+						margin-top: 1rem;
+						display: flex;
+						justify-content: space-around;
+					}
+
+					.formats-container .formats-container-item {
+						display: flex;
+						flex-direction: column;
+					}
+				</style>
+				<h2>Dans le monde numérique...</h2>
+				<div>Fichier regroupants des formes vectorielles</div>
+				<div>
+					2 principaux formats
+					<div class="formats-container">
+						<div class="formats-container-item">
+							<div class="file-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+									<path
+										d="M 256,0 V 128 H 384 Z M 224,128 V 0 H 48 C 21.49,0 0,21.49 0,48 v 416 c 0,26.5 21.49,48 48,48 h 288 c 26.51,0 48,-21.49 48,-48 V 160 H 256.9 C 238.3,160 224,145.7 224,128 Z" />
+								</svg>
+								<div class="file-icon-ext">.TTF</div>
+							</div>
+							<div>TrueType</div>
+						</div>
+						<div class="formats-container-item">
+							<div class="file-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+									<path
+										d="M 256,0 V 128 H 384 Z M 224,128 V 0 H 48 C 21.49,0 0,21.49 0,48 v 416 c 0,26.5 21.49,48 48,48 h 288 c 26.51,0 48,-21.49 48,-48 V 160 H 256.9 C 238.3,160 224,145.7 224,128 Z" />
+								</svg>
+								<div class="file-icon-ext">.OTF</div>
+							</div>
+							<div>OpenType</div>
+						</div>
+					</div>
+				</div>
+				<aside class="notes">
+					TrueType format historique
+					OpenType est une évolution de TrueType, résultat d’un partenariat entre Adobe et Microsoft
+				</aside>
+			</section>
+			<section>
+				<h2>WOFF2 pour le web</h2>
+				<ul>
+					<li>Format compressé 🗜</li>
+					<li>Compatible avec TrueType & OpenType</li>
+				</ul>
+				<aside class="notes">
+					https://github.blog/2016-02-22-delivering-octicons-with-svg/
+
+					WOFF2 apporte un gain dans la compression d'environ 30% (gzip -> brotli)
+				</aside>
+			</section>
+			<section>Ligature
+				<aside class="notes">
+					Devoxx Logo
+					Colored font: https://pixelambacht.nl/2014/multicolor-fonts/
+				</aside>
+			</section>
+			<section>Slide 6</section>
+			<section>Slide 7</section>
+			<section>Slide 8</section>
+			<section>Slide 9</section>
+			<section>
+				Ajoutez du caractère à votre site 🚀
+				<p class="fragment" style='font-variation-settings: "EXPR" 0, "SERI" 0'>Ajoutez du caractère à votre
+					site 🚀</p>
+			</section>
+			<aside class="notes">
+				https://redbrain.github.io/varianz/
+			</aside>
 		</div>
+		<footer class="devoxx">DEVOXX France</footer>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+
+		Reveal.addEventListener('slidechanged', function (e) {
+			const current = e.indexh;
+			const total = Reveal.getTotalSlides();
+			const casual = current / (total - 1) * 80;
+			const serif = current / (total - 1) * 50;
+			// console.log({current, total, casual})
+			let root = document.documentElement;
+			root.style.setProperty('--r-main-font-casual', casual);
+			root.style.setProperty('--r-main-font-serif', serif);
+		});
+	</script>
+</body>
+
 </html>
