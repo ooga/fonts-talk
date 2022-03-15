@@ -3,19 +3,37 @@
  *
  * By Hakim El Hattab, http://hakim.se
  */
-/* @import url(./fonts/source-sans-pro/source-sans-pro.css); */
-section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+section.has-light-background,
+section.has-light-background h1,
+section.has-light-background h2,
+section.has-light-background h3,
+section.has-light-background h4,
+section.has-light-background h5,
+section.has-light-background h6 {
   color: #222;
 }
 
 /* @import url('https://fonts.googleapis.com/css2?family=Recursive:wght,CASL,CRSV@300..800,0..1,0&display=swap');  */
 @font-face {
-  font-family: 'VARIANZ';
-  src: url('./VARIANZ-Variable.woff2');
+  font-family: "VARIANZ";
+  src: url("./VARIANZ.woff2");
 }
 @font-face {
-  font-family: 'QType';
-  src: url('./QTypeCustom.otf');
+  font-family: "Ampersand";
+  src: url("./VARIANZ.woff2");
+}
+@font-face {
+  font-family: "Ampersand";
+  src: url("./Nouvellepolice-Regular.woff2");
+  /* unicode-range: U+26; */
+}
+@font-face {
+  font-family: "QType";
+  src: url("./QTypeCustom.otf");
+}
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("./JetBrainsMono-Regular.woff2");
 }
 
 .reveal footer {
@@ -25,7 +43,20 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 .devoxx {
-  font-family: 'QType';
+  font-family: "QType";
+}
+
+.reveal #source {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.8em;
+  background-color: var(--r-link-color-dark);
+}
+.reveal .source {
+  display: none;
 }
 
 /*********************************************
@@ -69,7 +100,8 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-family: var(--r-main-font);
   font-size: var(--r-main-font-size);
   font-weight: normal;
-  font-variation-settings: "EXPR" var(--r-main-font-casual), "SERI" var(--r-main-font-serif);
+  font-variation-settings: "EXPR" var(--r-main-font-casual),
+    "SERI" var(--r-main-font-serif);
   color: var(--r-main-color);
 }
 
@@ -278,13 +310,13 @@ section.has-light-background, section.has-light-background h1, section.has-light
   border-bottom: 1px solid;
 }
 
-.reveal table th[align=center],
-.reveal table td[align=center] {
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
   text-align: center;
 }
 
-.reveal table th[align=right],
-.reveal table td[align=right] {
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
   text-align: right;
 }
 
