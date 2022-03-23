@@ -24,14 +24,7 @@
         <section>
           <h1>𝔸𝕛𝕠𝕦𝕥𝕖𝕫 du caractère à 𝕧𝕠𝕥𝕣𝕖 site 🚀</h1>
         </section>
-        <section>
-          <h2>Johan Rouve x Comet</h2>
-          <div>@JohanRouve</div>
-          <div>#JohanRouve</div>
-          <aside class="notes">
-            Complexe de trouver le bonne police pour ce talk
-          </aside>
-        </section>
+
         <section>
           <h2>C'est quoi une police de caractères ?</h2>
           <blockquote class="fragment">
@@ -42,6 +35,7 @@
             l’informatique.
           </aside>
         </section>
+
         <section>
           <h2>C'est quoi un glyphe ?</h2>
           <blockquote class="fragment">
@@ -49,6 +43,7 @@
             ou autre.
           </blockquote>
         </section>
+
         <section>
           <style>
             .file-icon {
@@ -115,6 +110,7 @@
             résultat d’un partenariat entre Adobe et Microsoft
           </aside>
         </section>
+
         <section>
           <h2>WOFF2 pour le web</h2>
           <ul>
@@ -126,6 +122,38 @@
             apporte un gain dans la compression d'environ 30% (gzip -> brotli)
           </aside>
         </section>
+
+        <section>
+          <div class="source">Typeface: Arizona (Dinamo)</div>
+          <h2>Johan Rouve x Comet</h2>
+          <div>@JohanRouve</div>
+          <aside class="notes">
+            Complexe de trouver le bonne police pour ce talk
+          </aside>
+        </section>
+
+        <section>
+          <h2>Structure</h2>
+          <ul>
+            <li class="fragment">name</li>
+            <li class="fragment">cmap</li>
+            <li class="fragment">glyf</li>
+          </ul>
+          <aside class="notes">
+            Une font contient de la donnée repartie en table.
+            ttx -l /System/Library/Fonts/Supplemental/Arial.ttf
+            name: infos nom, style, designer, ...
+            glyf: name + points
+            cmap: ascii code -> glyph name
+            pleins d'autres telle que le positionement ou la substitution
+          </aside>
+        </section>
+
+        <section>
+          <h2>Exemple glyf</h2>
+          <img src="./comet/one.jpg" />
+        </section>
+
         <section>
           <h2>Ligature</h2>
           <img class="fragment" src="./comet/fusion.gif" />
@@ -133,6 +161,7 @@
             Permet de remplacer un combinaison de glyphes par un nouveau
           </aside>
         </section>
+
         <section>
           <style>
             .font-jetbrains {
@@ -166,6 +195,7 @@
             https://pixelambacht.nl/2014/multicolor-fonts/
           </aside>
         </section>
+
         <section>
           <h3>Ligatures standards</h3>
           <p>fi, fl, ff, ffi, ffl, fb, ffb, fj, ffj, fk, ffk, ft, fft</p>
@@ -176,6 +206,7 @@
 				}
 			</code></pre>
         </section>
+
         <section>
           <h3>ligatures spécifiques</h3>
           <p class="fragment">inactif par défault</p>
@@ -185,43 +216,257 @@
 			}
 			</code></pre>
         </section>
+
         <section>
           <h2>Composition</h2>
           <ul>
             <li>Homogeneité</li>
             <li>Maintenabilité</li>
-            <li>Taille fichier ?</li>
           </ul>
           <aside class="notes">
             Principalement utilisé pour les caractères accentués
           </aside>
         </section>
+
+        <section>
+          <h3>Composition à l'extreme</h3>
+          <style>
+            .font-sixtyfour {
+              font-family: "Sixtyfour";
+              font-variation-settings: "wght" 300;
+              font-size: 1.5em;
+            }
+          </style>
+          <div class="source">Sixtyfour</div>
+          <div class="font-sixtyfour">
+            <p>a â à e é ë ê</p>
+            <p>B C D F G H I</p>
+          </div>
+          <aside class="notes">
+            8 glyphes simples
+            479 glyphes composés
+          </aside>
+        </section>
+
         <section>
           <h2>La quête de l'esperluette</h2>
+          <aside class="notes">
+            Il y a quelque mois de ca, dans notre equipe quand a on cherché une police pour notre design system on a été confronté a un probleme similaire, certaine nous plaisait à l'exception d'1 ou 2 caracteres.
+            A l'epoque je ne mettait pas encore penché enormement sur les sujets et donc nous avons exclus ces polices de notre shortlist.
+            Aujourd’hui nous allons crée ensemble un nouveau glyphe et on va l'utiliser, vous allez voir c'est plus simple qu'on le pense.
+            
+            Pendant mes recherches je suis tombé sur plusieurs articles de personnes qui recherchait le meilleur glyphe pour le "et commercial"
+          </aside>
         </section>
+
         <section>
           <style>
             .ampersand {
               font-family: "Ampersand";
+              font-size: 3em;
             }
           </style>
-          <div class="ampersand">Bibu & Baba</div>
+          <div class="ampersand">Johan & Baba</div>
           <aside class="notes">
             Demo : Dessin esperluette dans Figjam Figjam -> Figma Figma ->
             fichier.svg svg -> Glyphs
           </aside>
         </section>
-        <section>Alternatives stylistyques</section>
+
         <section>
-          Ajoutez du caractère à votre site 🚀
-          <p
-            class="fragment"
-            style="font-variation-settings: 'EXPR' 0, 'SERI' 0"
-          >
-            Ajoutez du caractère à votre site 🚀
-          </p>
+          <h2>Alternatives stylistyques</h2>
         </section>
-        <aside class="notes">https://redbrain.github.io/varianz/</aside>
+
+        <section>
+          <style>
+            .font-montserrat {
+              font-family: "Montserrat";
+              font-feature-settings: normal;
+            }
+            .enable-salt {
+              font-feature-settings: "salt";
+            }
+          </style>
+          <script>
+            const toggleAlternate = () => {
+              const items = document.getElementsByClassName("font-montserrat");
+              items.forEach((element) => {
+                element.classList.toggle("enable-salt");
+              });
+            };
+          </script>
+          <div class="source">Montserrat</div>
+          <div
+            class="font-montserrat"
+            onmouseenter="toggleAlternate()"
+            onmouseleave="toggleAlternate()"
+          >
+          <p>a e é f l t w y z</p>
+            <p>A E É F G I J M N Q T U W Y Z</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Alternative stylistique</h3>
+          <pre class="fragment"><code>
+			  .enable-salt {
+				  font-feature-settings: "salt";
+				}
+			</code></pre>
+        </section>
+
+        <section>
+          <h3>Ensemble stylistique</h3>
+          <pre class="fragment"><code>
+			  .enable-salt {
+				  font-feature-settings: "ss02";
+				}
+			</code></pre>
+      <aside class="notes">
+        Visulaiser avec https://fontdrop.info
+        Arizona 
+        - 2 alternative pour "a"
+        - 1 alternative pour "g"
+      </aside>
+        </section>
+
+        <section>
+          <h2>Couleurs</h2>
+        </section>
+
+        <section>
+          <style>
+            .font-bradley {
+              font-family: "Bradley Initials DJR";
+              font-size: 6em;
+            }
+            .provided-palette {
+              font-palette: --font-palette-bumble-bee;
+            }
+            .custom-palette {
+              font-palette: --font-palette-custom;
+            }
+          </style>
+          <div class="source">Bradley Initials DJR</div>
+          <p class="font-bradley">
+            <span>D</span>
+            <span class="provided-palette">D</span>
+            <span class="custom-palette">D</span>
+          </p>
+          <aside class="notes">
+            ttx dump to see palette: ttx -t CPAL -o - comet/BradleyInitialsDJR-Regular.woff
+          </aside>
+        </section>
+
+        <section>
+            <pre><code data-line-numbers="1-4|6-10|12-15">    @font-face {
+      font-family: 'Bradley Initials DJR';
+      src: url('./BradleyInitialsDJR-Regular.woff2');
+    }
+
+    @font-palette-values --custom-palette {
+      font-family: 'Bradley Initials DJR';
+      base-palette: 1;
+      override-colors: 0 #FFE424, 1 #FFFFFF;
+    }
+
+    body {
+      font-family: "Bradley Initials DJR";
+      font-palette: --custom-palette;
+    }
+            </code></pre>
+        </section>
+
+        <section id="slide-variable-start">
+          <p class="r-fit-text">Il y a quelque chose de differents</p>
+          <p
+            class="fragment r-fit-text"
+            style="
+              font-variation-settings: 'wght' var(--r-main-font-weight), 'srff' 0;
+            "
+          >
+          Il y a quelque chose de differents
+          </p>
+          <aside class="notes">https://redbrain.github.io/varianz/</aside>
+        </section>
+
+        <section>
+          <img src="./comet/liar.gif" />
+        </section>
+
+        <section>
+          <style>
+            .font-variable-serif {
+              font-variation-settings: "wght" var(--r-main-font-weight), "srff" var(--r-main-font-serif);
+            }
+            .font-variable-range-container {
+              width: 80%;
+              margin: 0 auto;
+              display: grid;
+              grid-template-columns: 1fr 2fr;
+              grid-row-gap: 1em;
+            }
+            .font-variable-range-container input {
+              width: 100%;
+            }
+          </style>
+          <div class="source">Arizona (Dinamo)</div>
+          <p class="font-variable-serif r-fit-text">Variable font for the win !</p>
+          <div class="font-variable-range-container">
+            <div class="fragment">Serif</div>
+            <input id="font-variable-serif-input" type="range" min="0" max="100" value="100" />
+            <div class="fragment">Weight</div>
+            <input id="font-variable-weight-input" class="fragment" type="range" min="20" max="150" value="90" />
+          </div>
+          <script>
+            const setSerifVar = (e) => {
+              const items = document.getElementsByClassName("font-variable-serif");
+              items.forEach((element) => {
+                element.style.setProperty("--r-main-font-serif", e.target.value);
+              });
+            };
+            const setWeightVar = (e) => {
+              const items = document.getElementsByClassName("font-variable-serif");
+              items.forEach((element) => {
+                element.style.setProperty("--r-main-font-weight", e.target.value);
+              });
+            };
+
+            const serifInput = document.getElementById('font-variable-serif-input');
+            serifInput.addEventListener('mousemove', setSerifVar)
+
+            const weightInput = document.getElementById('font-variable-weight-input');
+            weightInput.addEventListener('mousemove', setWeightVar)
+          </script>
+        </section>
+
+        <section>
+          <h3>Axe de variation</h3>
+          <aside class="notes">
+            Uniquement sur les glyphes simples
+          </aside>
+        </section>
+
+        <section>
+          <style>
+            .font-muybridge {
+              font-family: 'Muybridge';
+              line-height: 220px;
+              animation: 0.6s linear infinite Gallop;
+            }
+
+            .font-muybridge:hover {
+              animation-duration: 6s;
+            }
+          </style>
+          <div class="source">Muybridge</div>
+          <h3>Animation</h3>
+          <div class="font-muybridge r-fit-text fragment">🐎</div>
+          <aside class="notes">
+            Uniquement sur les glyphes simples
+          </aside>
+        </section>
+
       </div>
       <footer class="devoxx">DEVOXX France</footer>
     </div>
@@ -242,18 +487,29 @@
       });
 
       Reveal.addEventListener("slidechanged", function (e) {
+        
         // console.log({ e });
+
         handleSource(e.currentSlide);
         handleVariableFontTransition(e.indexh);
       });
 
       function handleVariableFontTransition(current) {
+        const maxSerif = 100;
         const total = Reveal.getTotalSlides();
-        const casual = (current / (total - 1)) * 80;
-        const serif = (current / (total - 1)) * 50;
-        // console.log({current, total, casual})
+        const sections = [...document.getElementsByTagName('section')];
+        const variableStartSectionIndex = sections.reduceRight((acc, current, index) => {
+          if (current.id === "slide-variable-start") {
+            return index;
+          }
+
+          return acc;
+        }, total);
+        const computedSerif = (current / (variableStartSectionIndex)) * maxSerif;
+        const serif = Math.min(computedSerif, maxSerif)
+        console.log({current, total, variableStartSectionIndex, computedSerif, serif})
+
         let root = document.documentElement;
-        root.style.setProperty("--r-main-font-casual", casual);
         root.style.setProperty("--r-main-font-serif", serif);
       }
 

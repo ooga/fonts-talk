@@ -19,13 +19,18 @@ section.has-light-background h6 {
   src: url("./VARIANZ.woff2");
 }
 @font-face {
+  font-family: "ABC Arizona";
+  src: url("./ABCArizona-Trial.woff2");
+}
+@font-face {
   font-family: "Ampersand";
-  src: url("./VARIANZ.woff2");
+  src: url("./ABCArizona-Trial.woff2");
 }
 @font-face {
   font-family: "Ampersand";
   src: url("./Nouvellepolice-Regular.woff2");
-  /* unicode-range: U+26; */
+  /* src: url("./QTypeCustom.otf");
+  unicode-range: U+26; */
 }
 @font-face {
   font-family: "QType";
@@ -34,6 +39,38 @@ section.has-light-background h6 {
 @font-face {
   font-family: "JetBrainsMono";
   src: url("./JetBrainsMono-Regular.woff2");
+}
+@font-face {
+  font-family: "Sixtyfour";
+  src: url("./Sixtyfour.woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("./Montserrat-VF.ttf");
+}
+
+@font-face {
+  font-family: 'Bradley Initials DJR';
+  src: url('./BradleyInitialsDJR-Regular.woff');
+}
+@font-palette-values --font-palette-bumble-bee {
+  font-family: 'Bradley Initials DJR';
+  base-palette: 3;
+}
+@font-palette-values --font-palette-custom {
+  font-family: 'Bradley Initials DJR';
+  base-palette: 1;
+  override-colors: 0 #FFF, 1 #267bbb, 2 #FFF, 3 #e90000, 4 #e90000;
+}
+
+@font-face {
+	font-family: 'Muybridge';
+	src: url('./MuybridgeGX.woff2');
+}
+
+@keyframes Gallop {
+	from { font-variation-settings: "TIME" 0; }
+	to { font-variation-settings: "TIME" 15; }
 }
 
 .reveal footer {
@@ -47,6 +84,7 @@ section.has-light-background h6 {
 }
 
 .reveal #source {
+  display: none;
   position: absolute;
   top: 16px;
   right: 16px;
@@ -64,12 +102,12 @@ section.has-light-background h6 {
  *********************************************/
 :root {
   --r-background-color: #191919;
-  --r-main-font: VARIANZ, Helvetica, sans-serif;
+  --r-main-font: "ABC Arizona", Helvetica, sans-serif;
   --r-main-font-size: 42px;
   --r-main-color: #fff;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: VARIANZ, Helvetica, sans-serif;
+  --r-heading-font: "ABC Arizona", Helvetica, sans-serif;
   --r-heading-color: #fff;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
@@ -87,7 +125,7 @@ section.has-light-background h6 {
   --r-link-color-hover: #8dcffc;
   --r-selection-background-color: #bee4fd;
   --r-selection-color: #fff;
-  --r-main-font-casual: 0;
+  --r-main-font-weight: 90;
   --r-main-font-serif: 0;
 }
 
@@ -100,8 +138,8 @@ section.has-light-background h6 {
   font-family: var(--r-main-font);
   font-size: var(--r-main-font-size);
   font-weight: normal;
-  font-variation-settings: "EXPR" var(--r-main-font-casual),
-    "SERI" var(--r-main-font-serif);
+  font-feature-settings: "ss01";
+  font-variation-settings: "wght" var(--r-main-font-weight), "srff" var(--r-main-font-serif);
   color: var(--r-main-color);
 }
 
