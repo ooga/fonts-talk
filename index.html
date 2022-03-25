@@ -123,10 +123,34 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background-image="./comet/PDV.jpg">
+          <style>
+            .text-dark, .text-dark h2 {
+              text-shadow: 0 0 8px var(--r-background-color);
+            }
+            .twitter-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .twitter-container img {
+              height: 1em;
+              margin: 0;
+              margin-right: 0.2em;
+              filter: drop-shadow(0 0 8px var(--r-background-color));
+            }
+            .twitter-container p {
+              margin: 0;
+            }
+          </style>
           <div class="source">Typeface: Arizona (Dinamo)</div>
-          <h2>Johan Rouve x Comet</h2>
-          <div>@JohanRouve</div>
+          <div class="text-dark">
+            <h2>Johan Rouve x Comet</h2>
+            <div class="twitter-container">
+              <img src="./comet/twitter.svg"/>
+              <p>@JohanRouve</p>
+            </div>
+          </div>
           <aside class="notes">
             Complexe de trouver le bonne police pour ce talk
           </aside>
@@ -148,10 +172,15 @@
             pleins d'autres telle que le positionement ou la substitution
           </aside>
         </section>
-
+        
         <section>
           <h2>Exemple glyf</h2>
           <img src="./comet/one.jpg" />
+          <aside class="notes">
+            2 types de points dans un glyph:
+            - point de passage du tracé
+            - point de courbes de bezier
+          </aside>
         </section>
 
         <section>
@@ -192,7 +221,12 @@
           </div>
           <aside class="notes">
             Devoxx Logo Colored font:
-            https://pixelambacht.nl/2014/multicolor-fonts/
+            <!-- https://pixelambacht.nl/2014/multicolor-fonts/ -->
+
+            Glyphs 
+            Glyphe -> Ajouter des glyphes
+            X_X
+            CMD + Shift + D
           </aside>
         </section>
 
@@ -268,6 +302,7 @@
           </style>
           <div class="ampersand">Johan & Baba</div>
           <aside class="notes">
+            https://www.figma.com/file/vXI2Y1uC9p3PalOyponvOa/Ampersand?node-id=0%3A1
             Demo : Dessin esperluette dans Figjam Figjam -> Figma Figma ->
             fichier.svg svg -> Glyphs
           </aside>
@@ -301,7 +336,7 @@
             onmouseenter="toggleAlternate()"
             onmouseleave="toggleAlternate()"
           >
-          <p>a e é f l t w y z</p>
+            <p>a e é f l t w y z</p>
             <p>A E É F G I J M N Q T U W Y Z</p>
           </div>
         </section>
@@ -359,7 +394,7 @@
         </section>
 
         <section>
-            <pre><code data-line-numbers="1-4|6-10|12-15">    @font-face {
+            <pre><code class="language-css" data-line-numbers="1-4|6-12|14-17">    @font-face {
       font-family: 'Bradley Initials DJR';
       src: url('./BradleyInitialsDJR-Regular.woff2');
     }
@@ -367,7 +402,9 @@
     @font-palette-values --custom-palette {
       font-family: 'Bradley Initials DJR';
       base-palette: 1;
-      override-colors: 0 #FFE424, 1 #FFFFFF;
+      override-colors:
+        0 #FFE424,
+        1 #FFFFFF;
     }
 
     body {
@@ -442,8 +479,12 @@
 
         <section>
           <h3>Axe de variation</h3>
+          <img class="fragment" src="./comet/variable_deltas.svg" />
           <aside class="notes">
             Uniquement sur les glyphes simples
+            Infinité d'axes possibles
+
+            2 types de points
           </aside>
         </section>
 
@@ -462,9 +503,26 @@
           <div class="source">Muybridge</div>
           <h3>Animation</h3>
           <div class="font-muybridge r-fit-text fragment">🐎</div>
-          <aside class="notes">
-            Uniquement sur les glyphes simples
-          </aside>
+        </section>
+        
+        <section>
+          <style>
+            .font-anicons {
+              font-family: 'Anicons Color';
+              font-variation-settings: "TIME" 1;
+              transition: font-variation-settings 0.6s ease;
+            }
+            .font-anicons:hover {
+              font-variation-settings: "TIME" 100;
+            }
+          </style>
+          <div class="source">Anicons Color</div>
+          <h3>Animation</h3>
+          <div class="font-anicons r-fit-text fragment">G t a 5</div>
+        </section>
+
+        <section>
+          <h2>Merci</h2>
         </section>
 
       </div>

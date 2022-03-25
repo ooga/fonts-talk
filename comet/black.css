@@ -60,17 +60,30 @@ section.has-light-background h6 {
 @font-palette-values --font-palette-custom {
   font-family: 'Bradley Initials DJR';
   base-palette: 1;
-  override-colors: 0 #FFF, 1 #267bbb, 2 #FFF, 3 #e90000, 4 #e90000;
+  override-colors: 
+    0 #FFF,
+    1 #267bbb,
+    2 #FFF,
+    3 #e90000,
+    4 #e90000;
 }
 
 @font-face {
 	font-family: 'Muybridge';
 	src: url('./MuybridgeGX.woff2');
 }
-
 @keyframes Gallop {
-	from { font-variation-settings: "TIME" 0; }
+  from { font-variation-settings: "TIME" 0; }
 	to { font-variation-settings: "TIME" 15; }
+}
+
+@font-face {
+  font-family: 'Anicons Color';
+  src: url('./AniconsColorGX.ttf');
+}
+@keyframes Animate {
+	from { font-variation-settings: "TIME" 1; }
+	to { font-variation-settings: "TIME" 100; }
 }
 
 .reveal footer {
@@ -92,6 +105,7 @@ section.has-light-background h6 {
   border-radius: 8px;
   font-size: 0.8em;
   background-color: var(--r-link-color-dark);
+  z-index: 1;
 }
 .reveal .source {
   display: none;
