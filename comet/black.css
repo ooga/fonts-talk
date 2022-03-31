@@ -20,15 +20,15 @@ section.has-light-background h6 {
 }
 @font-face {
   font-family: "ABC Arizona";
-  src: url("./ABCArizona-Trial.woff2");
+  src: url("./ABCArizonaPlus-Trial.woff");
 }
 @font-face {
   font-family: "Ampersand";
-  src: url("./ABCArizona-Trial.woff2");
+  src: url("./ABCArizonaPlus-Trial.woff");
 }
 @font-face {
   font-family: "Ampersand";
-  src: url("./Nouvellepolice-Regular.woff2");
+  src: url("./CustomAmpersand-Regular.otf");
   /* src: url("./QTypeCustom.otf");
   unicode-range: U+26; */
 }
@@ -53,9 +53,33 @@ section.has-light-background h6 {
   font-family: 'Bradley Initials DJR';
   src: url('./BradleyInitialsDJR-Regular.woff');
 }
+@font-palette-values --font-palette-default {
+  font-family: 'Bradley Initials DJR';
+  base-palette: 0;
+}
+@font-palette-values --font-palette-black-and-white {
+  font-family: 'Bradley Initials DJR';
+  base-palette: 1;
+}
+@font-palette-values --font-palette-royal-purple {
+  font-family: 'Bradley Initials DJR';
+  base-palette: 2;
+}
 @font-palette-values --font-palette-bumble-bee {
   font-family: 'Bradley Initials DJR';
   base-palette: 3;
+}
+@font-palette-values --font-palette-classic-red {
+  font-family: 'Bradley Initials DJR';
+  base-palette: 4;
+}
+@font-palette-values --font-palette-lilac-blossom {
+  font-family: 'Bradley Initials DJR';
+  base-palette: 5;
+}
+@font-palette-values --font-palette-seafoam {
+  font-family: 'Bradley Initials DJR';
+  base-palette: 6;
 }
 @font-palette-values --font-palette-custom {
   font-family: 'Bradley Initials DJR';
@@ -94,6 +118,7 @@ section.has-light-background h6 {
 
 .devoxx {
   font-family: "QType";
+  font-variant-ligatures: discretionary-ligatures;
 }
 
 .reveal #source {
@@ -139,8 +164,10 @@ section.has-light-background h6 {
   --r-link-color-hover: #8dcffc;
   --r-selection-background-color: #bee4fd;
   --r-selection-color: #fff;
-  --r-main-font-weight: 90;
+  --r-main-font-weight: 400;
   --r-main-font-serif: 0;
+  --r-main-font-italic: 0;
+  --r-main-font-palette: --font-palette-bumble-bee;
 }
 
 .reveal-viewport {
@@ -153,7 +180,7 @@ section.has-light-background h6 {
   font-size: var(--r-main-font-size);
   font-weight: normal;
   font-feature-settings: "ss01";
-  font-variation-settings: "wght" var(--r-main-font-weight), "srff" var(--r-main-font-serif);
+  font-variation-settings: "wght" var(--r-main-font-weight), "SRFF" var(--r-main-font-serif);
   color: var(--r-main-color);
 }
 

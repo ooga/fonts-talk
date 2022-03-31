@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>𝔸𝕛𝕠𝕦𝕥𝕖𝕫 du caractère à 𝕧𝕠𝕥𝕣𝕖 site 🚀</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -23,6 +23,9 @@
       <div class="slides">
         <section>
           <h1>𝔸𝕛𝕠𝕦𝕥𝕖𝕫 du caractère à 𝕧𝕠𝕥𝕣𝕖 site 🚀</h1>
+          <aside class="notes">
+            https://www.figma.com/file/vXI2Y1uC9p3PalOyponvOa/Ampersand-Jam
+          </aside>
         </section>
 
         <section>
@@ -37,11 +40,22 @@
         </section>
 
         <section>
+          <style>
+            .glyph img {
+              display: block;
+              margin: 0 auto;
+              max-width: 200px;
+            }
+          </style>
+
           <h2>C'est quoi un glyphe ?</h2>
-          <blockquote class="fragment">
-            Un petit symbole dessiné qui représente une lettre, une ponctuation
-            ou autre.
-          </blockquote>
+          <div class="fragment glyph">
+            <img src="./comet/glyph.svg" />
+            <blockquote>
+              Un petit symbole dessiné qui représente une lettre, une ponctuation
+              ou autre.
+            </blockquote>
+          </div>
         </section>
 
         <section>
@@ -145,7 +159,7 @@
           </style>
           <div class="source">Typeface: Arizona (Dinamo)</div>
           <div class="text-dark">
-            <h2>Johan Rouve x Comet</h2>
+            <h2 class="r-fit-text">Johan Rouve x Comet Meetings</h2>
             <div class="twitter-container">
               <img src="./comet/twitter.svg"/>
               <p>@JohanRouve</p>
@@ -157,18 +171,34 @@
         </section>
 
         <section>
+          <h3>Outils</h3>
+          <p>Glyphs 3</p>
+          <p>fonttools</p>
+        </section>
+
+        <section>
           <h2>Structure</h2>
-          <ul>
-            <li class="fragment">name</li>
-            <li class="fragment">cmap</li>
-            <li class="fragment">glyf</li>
-          </ul>
+          <table class="fragment">
+            <tr>
+              <td>name</td>
+              <td>infos nom, style, designer, ...</td>
+            </tr>
+            <tr class="fragment">
+              <td>glyf</td>
+              <td>nom, contour, points</td>
+            </tr>
+            <tr class="fragment">
+              <td>cmap</td>
+              <td>ascii code -> glyph index</td>
+            </tr>
+            <tr class="fragment">
+              <td colspan="2">... total de 50 tables dans la spec Opentype</td>
+            </tr>
+          </table>
           <aside class="notes">
             Une font contient de la donnée repartie en table.
             ttx -l /System/Library/Fonts/Supplemental/Arial.ttf
-            name: infos nom, style, designer, ...
-            glyf: name + points
-            cmap: ascii code -> glyph name
+            
             pleins d'autres telle que le positionement ou la substitution
           </aside>
         </section>
@@ -196,33 +226,33 @@
             .font-jetbrains {
               font-family: "JetBrainsMono";
             }
-            .disable-liga {
-              font-variant-ligatures: none;
+            .disable-contextual-liga {
+              font-variant-ligatures: no-contextual;
             }
           </style>
           <script>
             const toggleLigature = () => {
               const items = document.getElementsByClassName("font-jetbrains");
               items.forEach((element) => {
-                element.classList.toggle("disable-liga");
+                element.classList.toggle("disable-contextual-liga");
               });
             };
           </script>
           <div class="source">JetBrains Mono</div>
+          <h3>Ligatures contextuelles</h3>
           <div
-            class="font-jetbrains disable-liga"
+            class="font-jetbrains disable-contextual-liga"
             onmouseenter="toggleLigature()"
             onmouseleave="toggleLigature()"
+            contenteditable
           >
             <p>== != =/= <= >= <></p>
             <p><== <=> ==></p>
             <p>*** ?= <$> <$ $> @_</p>
             <p>|> <| ||> <|| |||> <|||</p>
           </div>
+          <p class="fragment">actif par défault</p>
           <aside class="notes">
-            Devoxx Logo Colored font:
-            <!-- https://pixelambacht.nl/2014/multicolor-fonts/ -->
-
             Glyphs 
             Glyphe -> Ajouter des glyphes
             X_X
@@ -238,7 +268,7 @@
 			  .disable-liga {
 				  font-variant-ligatures: none;
 				}
-			</code></pre>
+			    </code></pre>
         </section>
 
         <section>
@@ -248,7 +278,7 @@
 			.enable-dlig {
 				font-variant-ligatures: discretionary-ligatures;
 			}
-			</code></pre>
+			    </code></pre>
         </section>
 
         <section>
@@ -277,34 +307,9 @@
             <p>B C D F G H I</p>
           </div>
           <aside class="notes">
+            Recrée la fonte Commodore 64
             8 glyphes simples
             479 glyphes composés
-          </aside>
-        </section>
-
-        <section>
-          <h2>La quête de l'esperluette</h2>
-          <aside class="notes">
-            Il y a quelque mois de ca, dans notre equipe quand a on cherché une police pour notre design system on a été confronté a un probleme similaire, certaine nous plaisait à l'exception d'1 ou 2 caracteres.
-            A l'epoque je ne mettait pas encore penché enormement sur les sujets et donc nous avons exclus ces polices de notre shortlist.
-            Aujourd’hui nous allons crée ensemble un nouveau glyphe et on va l'utiliser, vous allez voir c'est plus simple qu'on le pense.
-            
-            Pendant mes recherches je suis tombé sur plusieurs articles de personnes qui recherchait le meilleur glyphe pour le "et commercial"
-          </aside>
-        </section>
-
-        <section>
-          <style>
-            .ampersand {
-              font-family: "Ampersand";
-              font-size: 3em;
-            }
-          </style>
-          <div class="ampersand">Johan & Baba</div>
-          <aside class="notes">
-            https://www.figma.com/file/vXI2Y1uC9p3PalOyponvOa/Ampersand?node-id=0%3A1
-            Demo : Dessin esperluette dans Figjam Figjam -> Figma Figma ->
-            fichier.svg svg -> Glyphs
           </aside>
         </section>
 
@@ -347,7 +352,80 @@
 			  .enable-salt {
 				  font-feature-settings: "salt";
 				}
-			</code></pre>
+			    </code></pre>
+        </section>
+
+        <section>
+          <style>
+            .font-arizona {
+              font-family: "ABC Arizona";
+              font-feature-settings: normal;
+              display: grid;
+              grid-template-columns: auto auto auto auto;
+            }
+            .font-arizona pre, .font-arizona p {
+              margin: 10px auto;
+            }
+            .font-arizona pre code {
+              display: flex;
+              align-items: center;
+            }
+            .enable-ss01 {
+              font-feature-settings: "ss01";
+            }
+            .enable-ss02 {
+              font-feature-settings: "ss02";
+            }
+            .enable-ss03 {
+              font-feature-settings: "ss03";
+            }
+            .enable-ss04 {
+              font-feature-settings: "ss04";
+            }
+            .enable-ss05 {
+              font-feature-settings: "ss05";
+            }
+            .enable-ss06 {
+              font-feature-settings: "ss06";
+            }
+            .enable-ss07 {
+              font-feature-settings: "ss07";
+            }
+          </style>
+          <div class="source">Arizona</div>
+          <div
+            class="font-arizona"
+          >
+            <p>a</p>
+            <p> -></p>
+            <p class="enable-ss01">a</p>
+            <pre><code>font-feature-settings: "ss01";</code></pre>
+
+            <p>a</p>
+            <p> -></p>
+            <p class="enable-ss02">a</p>
+            <pre><code>font-feature-settings: "ss02";</code></pre>
+
+            <p>g</p>
+            <p> -></p>
+            <p class="enable-ss03">g</p>
+            <pre><code>font-feature-settings: "ss03";</code></pre>
+
+            <p>Q g &</p>
+            <p> -></p>
+            <p class="enable-ss04">Q g &</p>
+            <pre><code>font-feature-settings: "ss04";</code></pre>
+
+            <p>14</p>
+            <p> -></p>
+            <p class="enable-ss05">14</p>
+            <pre><code>font-feature-settings: "ss05";</code></pre>
+
+            <p>“X”</p>
+            <p> -></p>
+            <p class="enable-ss06">“X”</p>
+            <pre><code>font-feature-settings: "ss06";</code></pre>
+          </div>
         </section>
 
         <section>
@@ -356,13 +434,39 @@
 			  .enable-salt {
 				  font-feature-settings: "ss02";
 				}
-			</code></pre>
-      <aside class="notes">
-        Visulaiser avec https://fontdrop.info
-        Arizona 
-        - 2 alternative pour "a"
-        - 1 alternative pour "g"
-      </aside>
+          </code></pre>
+          <aside class="notes">
+            Visulaiser avec https://fontdrop.info
+            Arizona 
+            - 2 alternative pour "a"
+            - 1 alternative pour "g"
+          </aside>
+        </section>
+
+        <section>
+          <h2>La quête de l'esperluette</h2>
+          <aside class="notes">
+            Il y a quelque mois de ca, dans notre equipe quand a on cherché une police pour notre design system on a été confronté a un probleme similaire, certaine nous plaisait à l'exception d'1 ou 2 caracteres.
+            A l'epoque je ne mettait pas encore penché enormement sur les sujets et donc nous avons exclus ces polices de notre shortlist.
+            Aujourd’hui nous allons crée ensemble un nouveau glyphe et on va l'utiliser, vous allez voir c'est plus simple qu'on le pense.
+            
+            Pendant mes recherches je suis tombé sur plusieurs articles de personnes qui recherchait le meilleur glyphe pour le "et commercial"
+          </aside>
+        </section>
+
+        <section>
+          <style>
+            .ampersand {
+              font-family: "Ampersand";
+              font-size: 3em;
+            }
+          </style>
+          <div class="ampersand">Johan & Baba</div>
+          <aside class="notes">
+            https://www.figma.com/file/vXI2Y1uC9p3PalOyponvOa/Ampersand?node-id=0%3A1
+            Demo : Dessin esperluette dans Figjam Figjam -> Figma Figma ->
+            fichier.svg svg -> Glyphs
+          </aside>
         </section>
 
         <section>
@@ -374,29 +478,61 @@
             .font-bradley {
               font-family: "Bradley Initials DJR";
               font-size: 6em;
+              display: flex;
+              justify-content: center;
+            }
+            .font-bradley > div {
+              display: flex; 
+              flex-direction: column;
             }
             .provided-palette {
-              font-palette: --font-palette-bumble-bee;
+              font-palette: var(--r-main-font-palette);
             }
             .custom-palette {
               font-palette: --font-palette-custom;
             }
           </style>
           <div class="source">Bradley Initials DJR</div>
-          <p class="font-bradley">
+          <div class="font-bradley">
             <span>D</span>
-            <span class="provided-palette">D</span>
+            <div>
+              <div class="provided-palette">D</div>
+              <select id="font-palette-input">
+                <option value="--font-palette-default">Default</option>
+                <option value="--font-palette-black-and-white">Black and White</option>
+                <option value="--font-palette-royal-purple">Royal Purple</option>
+                <option value="--font-palette-bumble-bee" selected>Bumble Bee</option>
+                <option value="--font-palette-classic-red">Classic Red</option>
+                <option value="--font-palette-lilac-blossom">Lilac Blossom</option>
+                <option value="--font-palette-seafoam">Seafoam</option>
+              </select>
+            </div>
             <span class="custom-palette">D</span>
-          </p>
+          </div>
+          <script>
+            const setPaletteVar = (e) => {
+              const items = document.getElementsByClassName("provided-palette");
+              items.forEach((element) => {
+                element.style.setProperty("--r-main-font-palette", e.target.value);
+              });
+            };
+            const paletteInput = document.getElementById('font-palette-input');
+            paletteInput.addEventListener('change', setPaletteVar)
+          </script>
           <aside class="notes">
             ttx dump to see palette: ttx -t CPAL -o - comet/BradleyInitialsDJR-Regular.woff
           </aside>
         </section>
 
         <section>
-            <pre><code class="language-css" data-line-numbers="1-4|6-12|14-17">    @font-face {
+            <pre><code class="language-css" data-line-numbers="1-4|6-9|11-17|19-22">    @font-face {
       font-family: 'Bradley Initials DJR';
       src: url('./BradleyInitialsDJR-Regular.woff2');
+    }
+
+    @font-palette-values --font-palette-bumble-bee {
+      font-family: 'Bradley Initials DJR';
+      base-palette: 3;
     }
 
     @font-palette-values --custom-palette {
@@ -415,14 +551,14 @@
         </section>
 
         <section id="slide-variable-start">
-          <p class="r-fit-text">Il y a quelque chose de differents</p>
+          <p class="r-fit-text">Il y a quelque chose de different</p>
           <p
             class="fragment r-fit-text"
             style="
-              font-variation-settings: 'wght' var(--r-main-font-weight), 'srff' 0;
+              font-variation-settings: 'wght' var(--r-main-font-weight), 'SRFF' 0;
             "
           >
-          Il y a quelque chose de differents
+          Il y a quelque chose de different
           </p>
           <aside class="notes">https://redbrain.github.io/varianz/</aside>
         </section>
@@ -434,7 +570,7 @@
         <section>
           <style>
             .font-variable-serif {
-              font-variation-settings: "wght" var(--r-main-font-weight), "srff" var(--r-main-font-serif);
+              font-variation-settings: "wght" var(--r-main-font-weight), "ital" var(--r-main-font-italic), "SRFF" var(--r-main-font-serif);
             }
             .font-variable-range-container {
               width: 80%;
@@ -450,10 +586,12 @@
           <div class="source">Arizona (Dinamo)</div>
           <p class="font-variable-serif r-fit-text">Variable font for the win !</p>
           <div class="font-variable-range-container">
-            <div class="fragment">Serif</div>
+            <div class="fragment" data-fragment-index="1">Serif</div>
             <input id="font-variable-serif-input" type="range" min="0" max="100" value="100" />
-            <div class="fragment">Weight</div>
-            <input id="font-variable-weight-input" class="fragment" type="range" min="20" max="150" value="90" />
+            <div class="fragment" data-fragment-index="2">Weight</div>
+            <input id="font-variable-weight-input" class="fragment" data-fragment-index="2" type="range" min="200" max="700" value="400" />
+            <div class="fragment" data-fragment-index="3">Italic</div>
+            <input id="font-variable-italic-input" class="fragment" data-fragment-index="3" type="range" min="0" max="14" value="0" />
           </div>
           <script>
             const setSerifVar = (e) => {
@@ -468,12 +606,21 @@
                 element.style.setProperty("--r-main-font-weight", e.target.value);
               });
             };
+            const setItalicVar = (e) => {
+              const items = document.getElementsByClassName("font-variable-serif");
+              items.forEach((element) => {
+                element.style.setProperty("--r-main-font-italic", e.target.value);
+              });
+            };
 
             const serifInput = document.getElementById('font-variable-serif-input');
             serifInput.addEventListener('mousemove', setSerifVar)
 
             const weightInput = document.getElementById('font-variable-weight-input');
             weightInput.addEventListener('mousemove', setWeightVar)
+            
+            const italicInput = document.getElementById('font-variable-italic-input');
+            italicInput.addEventListener('mousemove', setItalicVar)
           </script>
         </section>
 
@@ -519,6 +666,18 @@
           <div class="source">Anicons Color</div>
           <h3>Animation</h3>
           <div class="font-anicons r-fit-text fragment">G t a 5</div>
+        </section>
+
+        <section>
+          <h3>Benefices</h3>
+          <ul>
+            <li>Gain de chargement</li>
+            <li>Possibilité d'animation</li>
+            <li>Infinité de variations</li>
+          </ul>
+          <aside class="notes">
+            A partir de 2 variantes (regular, bold) vous serez tres certainement gagnant
+          </aside>
         </section>
 
         <section>
