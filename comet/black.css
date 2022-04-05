@@ -13,11 +13,6 @@ section.has-light-background h6 {
   color: #222;
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Recursive:wght,CASL,CRSV@300..800,0..1,0&display=swap');  */
-@font-face {
-  font-family: "VARIANZ";
-  src: url("./VARIANZ.woff2");
-}
 @font-face {
   font-family: "ABC Arizona";
   src: url("./ABCArizonaPlus-Trial.woff");
@@ -28,7 +23,7 @@ section.has-light-background h6 {
 }
 @font-face {
   font-family: "Ampersand";
-  src: url("./CustomAmpersand-Regular.otf");
+  /* src: url("./CustomAmpersand-Regular.otf"); */
   /* src: url("./QTypeCustom.otf");
   unicode-range: U+26; */
 }
@@ -118,7 +113,7 @@ section.has-light-background h6 {
 
 .devoxx {
   font-family: "QType";
-  font-variant-ligatures: discretionary-ligatures;
+  /* font-variant-ligatures: discretionary-ligatures; */
 }
 
 .reveal #source {

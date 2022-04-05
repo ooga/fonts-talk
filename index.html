@@ -171,12 +171,6 @@
         </section>
 
         <section>
-          <h3>Outils</h3>
-          <p>Glyphs 3</p>
-          <p>fonttools</p>
-        </section>
-
-        <section>
           <h2>Structure</h2>
           <table class="fragment">
             <tr>
@@ -205,7 +199,7 @@
         
         <section>
           <h2>Exemple glyf</h2>
-          <img src="./comet/one.jpg" />
+          <img src="./comet/one.svg" width="600px" />
           <aside class="notes">
             2 types de points dans un glyph:
             - point de passage du tracé
@@ -240,18 +234,52 @@
           </script>
           <div class="source">JetBrains Mono</div>
           <h3>Ligatures contextuelles</h3>
+          <br />
           <div
-            class="font-jetbrains disable-contextual-liga"
-            onmouseenter="toggleLigature()"
-            onmouseleave="toggleLigature()"
-            contenteditable
+          class="font-jetbrains disable-contextual-liga"
+          onmouseenter="toggleLigature()"
+          onmouseleave="toggleLigature()"
+          contenteditable
           >
             <p>== != =/= <= >= <></p>
             <p><== <=> ==></p>
             <p>*** ?= <$> <$ $> @_</p>
             <p>|> <| ||> <|| |||> <|||</p>
           </div>
-          <p class="fragment">actif par défault</p>
+        </section>
+      
+        <section>
+          <h3>Ligatures standards</h3>
+          <br />
+          <p>fi, fl, ff, ffi, ffl, fb, ffb, fj, ffj, fk, ffk, ft, fft</p>
+        </section>
+        
+        <section>
+          <style>
+            .glyphs-logo {
+              display: flex;
+              align-items: center;
+              color: #87f32e;
+              font-variation-settings: "wght" 560, "SRFF" 0;
+              font-size: 2em;
+              justify-content: center;
+            }
+            .glyphs-logo img {
+              max-height: 1.3em;
+            }
+            .glyphs-logo span {
+              letter-spacing: -0.02em;
+              margin-left: 0.4em;
+              letter-spacing: -0.02em;
+            }
+          </style>
+          <h3>Ligatures spécifiques</h3>
+          <br />
+          <div class="glyphs-logo">
+            <img src="./comet/GlyphsApp.svg"/>
+            <span>Glyphs</span>
+          </div>
+
           <aside class="notes">
             Glyphs 
             Glyphe -> Ajouter des glyphes
@@ -259,26 +287,54 @@
             CMD + Shift + D
           </aside>
         </section>
-
+        
         <section>
-          <h3>Ligatures standards</h3>
-          <p>fi, fl, ff, ffi, ffl, fb, ffb, fj, ffj, fk, ffk, ft, fft</p>
-          <p class="fragment">actif par défault</p>
-          <pre class="fragment"><code>
-			  .disable-liga {
-				  font-variant-ligatures: none;
-				}
-			    </code></pre>
-        </section>
+          <style>
+            .liga-css > div {
+              width: 100%;
+            }
+          </style>
+          <h3>Ligatures en CSS</h3>
+          <div class="liga-css r-stack">
+            <div class="fragment fade-out" data-fragment-index="0">
+              <h4>Ligatures standards</h4>
+              <p>actif par défaut</p>
+              <pre><code>
+      .enable-liga {
+        font-variant-ligatures: common-ligatures;
+      }
 
-        <section>
-          <h3>ligatures spécifiques</h3>
-          <p class="fragment">inactif par défault</p>
-          <pre class="fragment"><code>
-			.enable-dlig {
-				font-variant-ligatures: discretionary-ligatures;
-			}
-			    </code></pre>
+      .disable-liga {
+        font-variant-ligatures: no-common-ligatures;
+      }</code></pre>
+            </div>
+            
+            <div class="fragment fade-in-then-out" data-fragment-index="0">
+              <h4>Ligatures contextuelles</h4>
+              <p>actif par défaut</p>
+              <pre><code>
+      .enable-liga {
+        font-variant-ligatures: contextual;
+      }
+
+      .disable-liga {
+        font-variant-ligatures: no-contextual;
+      }</code></pre>
+            </div>
+            
+            <div class="fragment fade-in-then-out" data-fragment-index="1">
+              <h4>Ligatures spécifique</h4>
+              <p>inactif par défaut</p>
+              <pre><code>
+      .enable-liga {
+        font-variant-ligatures: discretionary-ligatures;
+      }
+
+      .disable-liga {
+        font-variant-ligatures: no-discretionary-ligatures;
+      }</code></pre>
+            </div>
+          </div>
         </section>
 
         <section>
@@ -314,7 +370,7 @@
         </section>
 
         <section>
-          <h2>Alternatives stylistyques</h2>
+          <h2>Caracteres alternatifs</h2>
         </section>
 
         <section>
@@ -336,6 +392,7 @@
             };
           </script>
           <div class="source">Montserrat</div>
+          <h3>Alternative stylistique</h3>
           <div
             class="font-montserrat"
             onmouseenter="toggleAlternate()"
@@ -344,15 +401,11 @@
             <p>a e é f l t w y z</p>
             <p>A E É F G I J M N Q T U W Y Z</p>
           </div>
-        </section>
-
-        <section>
-          <h3>Alternative stylistique</h3>
           <pre class="fragment"><code>
-			  .enable-salt {
-				  font-feature-settings: "salt";
-				}
-			    </code></pre>
+        .enable-salt {
+          font-feature-settings: "salt";
+        }
+          </code></pre>
         </section>
 
         <section>
@@ -393,6 +446,7 @@
             }
           </style>
           <div class="source">Arizona</div>
+          <h3>Ensemble stylistique</h3>
           <div
             class="font-arizona"
           >
@@ -429,21 +483,6 @@
         </section>
 
         <section>
-          <h3>Ensemble stylistique</h3>
-          <pre class="fragment"><code>
-			  .enable-salt {
-				  font-feature-settings: "ss02";
-				}
-          </code></pre>
-          <aside class="notes">
-            Visulaiser avec https://fontdrop.info
-            Arizona 
-            - 2 alternative pour "a"
-            - 1 alternative pour "g"
-          </aside>
-        </section>
-
-        <section>
           <h2>La quête de l'esperluette</h2>
           <aside class="notes">
             Il y a quelque mois de ca, dans notre equipe quand a on cherché une police pour notre design system on a été confronté a un probleme similaire, certaine nous plaisait à l'exception d'1 ou 2 caracteres.
@@ -458,10 +497,9 @@
           <style>
             .ampersand {
               font-family: "Ampersand";
-              font-size: 3em;
             }
           </style>
-          <div class="ampersand">Johan & Baba</div>
+          <div class="ampersand r-fit-text">Johan & Custom</div>
           <aside class="notes">
             https://www.figma.com/file/vXI2Y1uC9p3PalOyponvOa/Ampersand?node-id=0%3A1
             Demo : Dessin esperluette dans Figjam Figjam -> Figma Figma ->
@@ -560,7 +598,6 @@
           >
           Il y a quelque chose de different
           </p>
-          <aside class="notes">https://redbrain.github.io/varianz/</aside>
         </section>
 
         <section>
@@ -626,12 +663,14 @@
 
         <section>
           <h3>Axe de variation</h3>
-          <img class="fragment" src="./comet/variable_deltas.svg" />
+          <img class="fragment" width="60%" src="./comet/variable_deltas_focus.svg" />
+        </section>
+
+        <section>
+          <img src="./comet/variable_deltas.svg" />
           <aside class="notes">
             Uniquement sur les glyphes simples
             Infinité d'axes possibles
-
-            2 types de points
           </aside>
         </section>
 
@@ -684,6 +723,44 @@
           <h2>Merci</h2>
         </section>
 
+        <section>
+          <style>
+            .reference-container {
+              display: grid;
+              grid-template-columns: auto auto;
+            }
+          </style>
+          <h2>References</h2>
+
+          <div class="reference-container">
+            <div>
+              <h3>Outils</h3>
+              <ul>
+                <li><a href="https://glyphsapp.com/">Glyphs</a></li>
+                <li><a href="https://github.com/fonttools/fonttools">fontTools</a></li>
+                <li><a href="https://fontdrop.info">FontDrop!</a></li>
+                <li><a href="https://www.axis-praxis.org/samsa/">Samsa</a></li>
+                <li><a href="https://sparanoid.com/lab/opentype-features/">Sparanoid</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Fonts</h3>
+              <ul>
+                <li><a href="https://abcdinamo.com/typefaces/arizona">Arizona</a></li>
+                <li><a href="https://www.jetbrains.com/fr-fr/lp/mono/">JetBrains Mono</a></li>
+                <li><a href="https://github.com/jenskutilek/homecomputer-fonts">Sixtyfour</a></li>
+                <li><a href="https://github.com/JulietaUla/Montserrat">Montserrat</a></li>
+                <li><a href="https://djr.com/notes/bradley-initials-font-of-the-month">Bradley Initials DJR</a></li>
+                <li><a href="https://www.lorp.org/">Muybridge</a></li>
+                <li><a href="https://typogram.github.io/Anicons/">Anicons Color</a></li>
+                <li><a href="https://www.fontshop.com/families/ff-qtype">QType</a></li>
+              </ul>
+            </div>
+          </div>
+          
+        </section>
+
       </div>
       <footer class="devoxx">DEVOXX France</footer>
     </div>
@@ -704,7 +781,6 @@
       });
 
       Reveal.addEventListener("slidechanged", function (e) {
-        
         // console.log({ e });
 
         handleSource(e.currentSlide);
@@ -724,7 +800,7 @@
         }, total);
         const computedSerif = (current / (variableStartSectionIndex)) * maxSerif;
         const serif = Math.min(computedSerif, maxSerif)
-        console.log({current, total, variableStartSectionIndex, computedSerif, serif})
+        // console.log({current, total, variableStartSectionIndex, computedSerif, serif})
 
         let root = document.documentElement;
         root.style.setProperty("--r-main-font-serif", serif);
