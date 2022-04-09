@@ -171,8 +171,43 @@
         </section>
 
         <section>
+          <style>
+            .toto {
+              display: grid;
+              grid-template-columns: auto auto;
+            }
+            .toto hr {
+              grid-column: 1 / 3;
+              height: 1px;
+              background: currentColor;
+              width: 100%;
+              border: 0;
+              margin: 0;
+            }
+            .toto .description {
+              text-align: left;
+            }
+            .toto .full {
+              grid-column: 1 / 3;
+            }
+          </style>
           <h2>Structure</h2>
-          <table class="fragment">
+          <div class="toto">
+            <p class="fragment" data-fragment-index="0">name</p>
+            <p class="fragment description" data-fragment-index="0">infos nom, style, designer, ...</p>
+            <hr class="fragment" data-fragment-index="0" />
+
+            <p class="fragment" data-fragment-index="1">glyf</p>
+            <p class="fragment description" data-fragment-index="1">nom, contour, points</p>
+            <hr class="fragment" data-fragment-index="1" />
+            
+            <p class="fragment" data-fragment-index="2">cmap</p>
+            <p class="fragment description" data-fragment-index="2">ascii code -> glyph index</p>
+            <hr class="fragment" data-fragment-index="2" />
+
+            <p class="fragment full" data-fragment-index="3">... total de 50 tables dans la spec Opentype</p>
+          </div>
+          <!-- <table class="fragment">
             <tr>
               <td>name</td>
               <td>infos nom, style, designer, ...</td>
@@ -188,12 +223,12 @@
             <tr class="fragment">
               <td colspan="2">... total de 50 tables dans la spec Opentype</td>
             </tr>
-          </table>
+          </table> -->
           <aside class="notes">
             Une font contient de la donnée repartie en table.
             ttx -l /System/Library/Fonts/Supplemental/Arial.ttf
             
-            pleins d'autres telle que le positionement ou la substitution
+            pleins d'autres telle que le positionnement ou la substitution
           </aside>
         </section>
         
@@ -237,6 +272,15 @@
             8 glyphes simples
             479 glyphes composés
           </aside>
+        </section>
+        
+        <section>
+          <div class="r-stack">
+            <img src="comet/comp_pixel.svg">
+            <img class="fragment" src="comet/comp_a.svg">
+            <img class="fragment" src="comet/comp_^.svg">
+            <img class="fragment" src="comet/comp_â.svg">
+            </div>
         </section>
 
         <section>
@@ -285,41 +329,7 @@
           <br />
           <p>fi, fl, ff, ffi, ffl, fb, ffb, fj, ffj, fk, ffk, ft, fft</p>
         </section>
-        
-        <section>
-          <style>
-            .glyphs-logo {
-              display: flex;
-              align-items: center;
-              color: #87f32e;
-              font-variation-settings: "wght" 560, "SRFF" 0;
-              font-size: 2em;
-              justify-content: center;
-            }
-            .glyphs-logo img {
-              max-height: 1.3em;
-            }
-            .glyphs-logo span {
-              letter-spacing: -0.02em;
-              margin-left: 0.4em;
-              letter-spacing: -0.02em;
-            }
-          </style>
-          <h3>Ligatures spécifiques</h3>
-          <br />
-          <div class="glyphs-logo">
-            <img src="./comet/GlyphsApp.svg"/>
-            <span>Glyphs</span>
-          </div>
 
-          <aside class="notes">
-            Glyphs 
-            Glyphe -> Ajouter des glyphes
-            X_X
-            CMD + Shift + D
-          </aside>
-        </section>
-        
         <section>
           <style>
             .liga-css > div {
@@ -353,24 +363,63 @@
         font-variant-ligatures: no-contextual;
       }</code></pre>
             </div>
-            
-            <div class="fragment fade-in-then-out" data-fragment-index="1">
-              <h4>Ligatures spécifique</h4>
-              <p>inactif par défaut</p>
-              <pre><code>
-      .enable-liga {
-        font-variant-ligatures: discretionary-ligatures;
-      }
-
-      .disable-liga {
-        font-variant-ligatures: no-discretionary-ligatures;
-      }</code></pre>
-            </div>
           </div>
+        </section>
+        
+        <section>
+          <style>
+            .glyphs-logo {
+              display: flex;
+              align-items: center;
+              color: #87f32e;
+              font-variation-settings: "wght" 560, "SRFF" 0;
+              font-size: 2em;
+              justify-content: center;
+            }
+            .glyphs-logo img {
+              max-height: 1.3em;
+            }
+            .glyphs-logo span {
+              letter-spacing: -0.02em;
+              margin-left: 0.4em;
+              letter-spacing: -0.02em;
+            }
+            .glyphs-conventions {
+              color: #87f32e;
+              display: grid;
+              grid-template-columns: 1fr min-content 1fr;
+            }
+          </style>
+          <h3>Ligatures spécifiques</h3>
+          <br />
+          <div class="glyphs-logo">
+            <img src="./comet/GlyphsApp.svg"/>
+            <span>Glyphs</span>
+          </div>
+          <div class="glyphs-conventions fragment">
+            <p>a_b</p>
+            <p> -></p>
+            <p>ligature spécifique</p>
+          
+            <p>a_b.liga</p>
+            <p> -></p>
+            <p>ligature standard</p>
+          </div>
+
+          <aside class="notes">
+            Glyphs 
+            Glyphe -> Ajouter des glyphes
+            X_X
+            CMD + Shift + D
+          </aside>
         </section>
 
         <section>
-          <h2>Caracteres alternatifs</h2>
+          <h2>Caractères alternatifs</h2>
+          <aside class="notes">
+            Il y a quelque mois de ca, dans notre equipe quand a on cherché une police pour notre design system on a été confronté a un probleme similaire, certaine nous plaisait à l'exception d'1 ou 2 caractères.
+            A l'epoque je ne mettait pas encore penché enormement sur les sujets et donc nous avons exclus ces polices de notre shortlist.
+          </aside>
         </section>
 
         <section>
@@ -392,7 +441,7 @@
             };
           </script>
           <div class="source">Montserrat</div>
-          <h3>Alternative stylistique</h3>
+          <h3>Variante stylistique</h3>
           <div
             class="font-montserrat"
             onmouseenter="toggleAlternate()"
@@ -485,11 +534,8 @@
         <section>
           <h2>La quête de l'esperluette</h2>
           <aside class="notes">
-            Il y a quelque mois de ca, dans notre equipe quand a on cherché une police pour notre design system on a été confronté a un probleme similaire, certaine nous plaisait à l'exception d'1 ou 2 caracteres.
-            A l'epoque je ne mettait pas encore penché enormement sur les sujets et donc nous avons exclus ces polices de notre shortlist.
-            Aujourd’hui nous allons crée ensemble un nouveau glyphe et on va l'utiliser, vous allez voir c'est plus simple qu'on le pense.
-            
             Pendant mes recherches je suis tombé sur plusieurs articles de personnes qui recherchait le meilleur glyphe pour le "et commercial"
+            Aujourd’hui nous allons crée ensemble notre version et on va l'utiliser, vous allez voir c'est plus simple qu'on le pense.
           </aside>
         </section>
 
@@ -667,7 +713,11 @@
 
         <section>
           <h3>Axe de variation</h3>
-          <img class="fragment" width="60%" src="./comet/variable_deltas_focus.svg" />
+          <div class="r-stack">
+            <img width="60%" src="./comet/variable_deltas_focus_a.svg" />
+            <img class="fragment" width="60%" src="./comet/variable_deltas_focus_b.svg" />
+            <img class="fragment" width="60%" src="./comet/variable_deltas_focus_a+b.svg" />
+          </div>
         </section>
 
         <section>
@@ -712,7 +762,7 @@
         </section>
 
         <section>
-          <h3>Benefices</h3>
+          <h3>Bénéfices</h3>
           <ul>
             <li>Gain de chargement</li>
             <li>Possibilité d'animation</li>
@@ -734,7 +784,7 @@
               grid-template-columns: auto auto;
             }
           </style>
-          <h2>References</h2>
+          <h2>Références</h2>
 
           <div class="reference-container">
             <div>
