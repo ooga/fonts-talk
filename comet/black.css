@@ -23,9 +23,11 @@ section.has-light-background h6 {
 }
 @font-face {
   font-family: "Ampersand";
-  /* src: url("./CustomAmpersand-Regular.otf"); */
+
   /* src: url("./QTypeCustom.otf");
   unicode-range: U+26; */
+
+  /* src: url("./CustomAmpersand-Regular.otf"); */
 }
 @font-face {
   font-family: "QType";
