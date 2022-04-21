@@ -27,7 +27,7 @@ section.has-light-background h6 {
   /* src: url("./QTypeCustom.otf");
   unicode-range: U+26; */
 
-  /* src: url("./CustomAmpersand-Regular.otf"); */
+  src: url("./CustomAmpersand-Regular.otf");
 }
 @font-face {
   font-family: "QType";
@@ -115,7 +115,7 @@ section.has-light-background h6 {
 
 .devoxx {
   font-family: "QType";
-  /* font-variant-ligatures: discretionary-ligatures; */
+  font-variant-ligatures: discretionary-ligatures;
 }
 
 .reveal #source {
