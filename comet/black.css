@@ -30,6 +30,10 @@ section.has-light-background h6 {
   src: url("./CustomAmpersand-Regular.otf");
 }
 @font-face {
+  font-family: "ParisWeb";
+  src: url("./ParisWeb-Regular.otf");
+}
+@font-face {
   font-family: "QType";
   src: url("./QTypeCustom.otf");
 }
@@ -109,12 +113,14 @@ section.has-light-background h6 {
 
 .reveal footer {
   position: absolute;
-  bottom: 23px;
-  left: 17px;
+  bottom: 17px;
+  left: 25px;
 }
 
-.devoxx {
-  font-family: "QType";
+.paris-web {
+  font-size: 3.5em;
+  line-height: 0.68em;
+  font-family: "ParisWeb";
   font-variant-ligatures: discretionary-ligatures;
 }
 
